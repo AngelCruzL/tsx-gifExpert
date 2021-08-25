@@ -1,28 +1,24 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, Dispatch, SetStateAction } from 'react';
 
-function AddCategory() {
+function AddCategory({
+  setCategories,
+}: {
+  setCategories: Dispatch<SetStateAction<string[]>>;
+}) {
   const [inputValue, setInputValue] = useState('');
 
-  const inputValueRef = useRef<HTMLInputElement>(null);
-
-  const submitHandler = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(12);
+    setCategories(category => [...category, inputValue]);
   };
 
-  const HandleInputChange = () => {
-    setInputValue(inputValueRef.current!.value);
+  const handleInputChange = (e: React.FormEvent) => {
+    setInputValue((e.target as HTMLInputElement).value);
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <h1>{inputValue}</h1>
-      <input
-        type="text"
-        value={inputValue}
-        ref={inputValueRef}
-        onChange={HandleInputChange}
-      />
+    <form onSubmit={handleSubmit}>
+      <input type="text" value={inputValue} onChange={handleInputChange} />
     </form>
   );
 }
