@@ -10,7 +10,7 @@ function AddCategory({ setCategories }: CustomProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (inputValue.trim().length > 3) {
-      setCategories(category => [...category, inputValue]);
+      setCategories(category => [inputValue, ...category]);
       setInputValue('');
     }
   };
