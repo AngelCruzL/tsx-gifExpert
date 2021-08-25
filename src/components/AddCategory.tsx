@@ -1,15 +1,18 @@
-import React, { useState, useRef, Dispatch, SetStateAction } from 'react';
+import React, { useState, Dispatch, SetStateAction } from 'react';
 
-function AddCategory({
-  setCategories,
-}: {
+interface CustomProps {
   setCategories: Dispatch<SetStateAction<string[]>>;
-}) {
+}
+
+function AddCategory({ setCategories }: CustomProps) {
   const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setCategories(category => [...category, inputValue]);
+    if (inputValue.trim().length > 3) {
+      setCategories(category => [...category, inputValue]);
+      setInputValue('');
+    }
   };
 
   const handleInputChange = (e: React.FormEvent) => {
