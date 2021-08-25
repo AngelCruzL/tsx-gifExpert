@@ -27,12 +27,14 @@ function GifGrid({ category }: { category: string }) {
   };
 
   return (
-    <div>
+    <>
       <h3>{category}</h3>
-      {images.map(({ id, title, url }) => (
-        <GridItem key={id} title={title} url={url} id={id} />
-      ))}
-    </div>
+      <div className="card-grid">
+        {images.map(({ id, title, url }) => (
+          <GridItem key={id} title={title} url={url} id={id} />
+        ))}
+      </div>
+    </>
   );
 }
 

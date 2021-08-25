@@ -11,3 +11,25 @@ input {
   width: 100%;
   color: grey;
 }
+
+.card-grid {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.card {
+  align-content: center;
+  border: 1px solid grey;
+  border-radius: 6px;
+  margin-block-end: 10px;
+  margin-inline-end: 10px;
+  overflow: hidden;
+}
+.card p {
+  inline-size: 80%;
+  margin-inline: auto;
+  padding-block: 5px;
+}
+.card img {
+  max-block-size: 170px;
+}
