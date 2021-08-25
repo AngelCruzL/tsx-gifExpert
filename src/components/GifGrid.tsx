@@ -9,7 +9,7 @@ function GifGrid({ category }: { category: string }) {
 
   return (
     <>
-      <h3>{category}</h3>
+      <h3 className="animate__animated animate__flash">{category}</h3>
 
       {isLoading && <Loader />}
 
