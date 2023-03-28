@@ -1,7 +1,7 @@
 import React from 'react';
 import { CustomGif } from '../interfaces/CustomGif';
 
-function GridItem({ title, url }: CustomGif) {
+function GifItem({ title, url }: CustomGif) {
   return (
     <div className="card animate__animated animate__fadeIn">
       <img src={url} alt={title} />
@@ -10,4 +10,4 @@ function GridItem({ title, url }: CustomGif) {
   );
 }
 
-export default GridItem;
+export default GifItem;

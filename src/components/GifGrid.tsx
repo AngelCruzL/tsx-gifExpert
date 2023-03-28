@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFetchGifs } from '../hooks/useFetchGifs';
 
-import GridItem from './GridItem';
+import GifItem from './GifItem';
 import Loader from './Loader';
 
 function GifGrid({ category }: { category: string }) {
@@ -15,7 +15,7 @@ function GifGrid({ category }: { category: string }) {
 
       <div className="card-grid">
         {images.map(({ id, title, url }) => (
-          <GridItem key={id} title={title} url={url} id={id} />
+          <GifItem key={id} title={title} url={url} id={id} />
         ))}
       </div>
     </>
