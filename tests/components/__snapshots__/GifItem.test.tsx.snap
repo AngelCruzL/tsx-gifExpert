@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`GifItem > should match snapshot 1`] = `
+<div>
+  <div
+    class="card animate__animated animate__fadeIn"
+  >
+    <img
+      alt="Berserk"
+      src="https://media2.giphy.com/media/oNJ3am00JCroA/giphy.gif"
+    />
+    <p>
+      Berserk
+    </p>
+  </div>
+</div>
+`;
