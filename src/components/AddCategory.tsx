@@ -1,4 +1,4 @@
-import React, { useState, Dispatch, SetStateAction } from 'react';
+import React, { Dispatch, SetStateAction, useState } from 'react';
 
 interface CustomProps {
   setCategories: Dispatch<SetStateAction<string[]>>;
@@ -20,7 +20,7 @@ function AddCategory({ setCategories }: CustomProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} aria-label="form">
       <input type="text" value={inputValue} onChange={handleInputChange} />
     </form>
   );
